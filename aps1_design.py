@@ -1,12 +1,12 @@
 import sys
 #sys.exit()
 
+
 import random
 
+
 #sorteio dado 1 e 2 "Come Out"
-
 soma = 0
-
 def d1():
     x = random.randint(1, 6)
     y = random.randint(1, 6)
@@ -14,10 +14,14 @@ def d1():
     return soma
 soma = d1()
 
+
 #fichas iniciais
 fichas = 100
+
+
 print("Você tem: 100 fichas")
 print("Para desistir do jogo a qualquer momento, escreva (desligar)"
+
 
 pergunta = input("Você quer apostar?")
 
