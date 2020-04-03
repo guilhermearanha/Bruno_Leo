@@ -2,6 +2,7 @@ import random
 
 soma = 0
 soma2 = 0
+i = 0
 
 gameon = False
 
@@ -39,8 +40,12 @@ while gameon == True and fichas != 0:
     print('---------------------------')
     print("Início da rodada.")
 
-    jogo = input("Qual tipo de aposta você deseja fazer? Pass Line Bet / Field / Any Craps / Twelve:")
-    
+#para jogar pass line bet apenas na primeira rodada
+    if i == 0:
+        jogo = input("Qual tipo de aposta você deseja fazer? Pass Line Bet / Field / Any Craps / Twelve:")
+    if i != 0:
+        jogo = input("Qual tipo de aposta você deseja fazer? Field / Any Craps / Twelve:")
+
     if jogo == 'desligar' or jogo == 'Desligar':
         gameon = False
     if jogo != "Pass Line Bet" and jogo != "pass line bet" and jogo != "Field" and jogo != "field" and jogo != "Any Craps" and jogo != "any craps" and jogo != "Twelve" and jogo != "twelve" and jogo != 'desligar' and jogo != 'Desligar':
@@ -55,7 +60,7 @@ while gameon == True and fichas != 0:
         y = random.randint(1, 6)
         soma = x + y
         
-        print('')
+        print('  ')
         print("A soma dos dados deu: {0}".format(soma))
 
         if soma == 7 or soma == 11:
@@ -80,7 +85,8 @@ while gameon == True and fichas != 0:
 
                 print('')
                 print("A soma dos dados deu: {0}".format(soma2))
-            
+
+    i += 1     
     fichas == fichas
          
     if jogo == "Field" or jogo == "field":
@@ -103,7 +109,8 @@ while gameon == True and fichas != 0:
             fichas += aposta*2
         elif soma == 12:
             fichas += aposta*3
-        
+
+    i += 1    
     fichas == fichas
 
     if jogo == "Any Craps" or jogo == "any craps":
@@ -123,7 +130,8 @@ while gameon == True and fichas != 0:
        
         else:
             fichas -= aposta
-        
+    
+    i += 1
     fichas == fichas
 
     if jogo == "Twelve" or jogo == "twelve":
@@ -145,7 +153,8 @@ while gameon == True and fichas != 0:
             gameon = False
         else:
             fichas -= aposta
-        
+
+    i += 1 
     fichas == fichas
     
     print("   ")
