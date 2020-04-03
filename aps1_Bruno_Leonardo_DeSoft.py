@@ -64,7 +64,8 @@ while gameon == True and fichas != 0:
             fichas -= aposta
         else:
             print("Início da fase Point")
-            
+            print("Na fase point A aposta já feita continua valendo, porém, a soma do novo lançamento dos dados(Point) deve ser igual à soma anterior.")
+
             point = soma
             while soma2 != point and soma2 != 7:
                 
