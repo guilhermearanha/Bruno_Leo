@@ -10,8 +10,12 @@ fichas = 100
 aposta = 0
 
 print('Regras do Jogo:')
+print('  ')
 print('1-É permitido apenas apostas com números inteiros.')
+print('  ')
 print('2-Não é permitido sair do jogo durante a fase de apostas (caso não seja a fase de apostas, para sair do jogo basta escrever "desligar").')
+print('  ')
+print('Serão jogados dois dados, e a soma dos dois dados dará rumo ao jogo. Esses são os tipos de aposta possíveis:')
 print('  ')
 print('Pass Line Bet(disponível apenas na rodada Come Out): Se a soma dos dados for 7 ou 11, você ganha a mesma quantidade de fichas que apostou. Já se a soma dos dados for 2, 3 ou 12(Craps), você perde tudo. Agora, caso a soma dos dados de 4, 5, 6, 8, 9 ou 10, você avança para a próxima fase: fase Point.')
 print('  ')
@@ -24,7 +28,7 @@ print('  ')
 print("Você tem: 100 fichas")
 
 
-pergunta = input("Você quer apostar?")
+pergunta = input("Você quer começar o jogo? (sim/não)")
 
 if pergunta == "sim" or pergunta == "s" or pergunta == "Sim":
     gameon = True
@@ -50,7 +54,8 @@ while gameon == True and fichas != 0:
         y = random.randint(1, 6)
         soma = x + y
         
-        print("A soma deu {0}".format(soma))
+        print('')
+        print("A soma dos dados deu: {0}".format(soma))
 
         if soma == 7 or soma == 11:
             fichas += aposta
@@ -70,7 +75,9 @@ while gameon == True and fichas != 0:
                     fichas += aposta
                 elif soma2 == 7:
                     fichas -= aposta #verificar regras
-                print("A soma deu {0}".format(soma2))
+
+                print('')
+                print("A soma dos dados deu: {0}".format(soma2))
             
     fichas == fichas
          
@@ -83,7 +90,8 @@ while gameon == True and fichas != 0:
         y = random.randint(1, 6)
         soma = x + y
         
-        print("A soma deu {0}".format(soma))
+        print('')
+        print("A soma dos dados deu: {0}".format(soma))
 
         if soma == 5 or soma == 6 or soma == 7 or soma == 8:
             fichas -= aposta
@@ -105,7 +113,8 @@ while gameon == True and fichas != 0:
         y = random.randint(1, 6)
         soma = x + y
         
-        print("A soma deu {0}".format(soma))
+        print('')
+        print("A soma dos dados deu: {0}".format(soma))
 
         if soma == 2 or soma == 3 or soma == 12:
             fichas += aposta*7
@@ -124,7 +133,8 @@ while gameon == True and fichas != 0:
         y = random.randint(1, 6)
         soma = x + y
         
-        print("A soma deu {0}".format(soma))
+        print('')
+        print("A soma dos dados deu: {0}".format(soma))
 
         if soma == 12:
             fichas += aposta*30
@@ -135,8 +145,10 @@ while gameon == True and fichas != 0:
             fichas -= aposta
         
     fichas == fichas
-
+    
+    print("   ")
     print('Você tem: {0} fichas.'.format(fichas))  
 
 else:
+    print('')
     print("O jogo acabou!")
