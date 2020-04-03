@@ -26,6 +26,7 @@ print('  ')
 print('Twelve(disponível em qual fase do jogo): Se a soma der 12, o jogador ganha 30 o valor de sua aposta. Caso o contrário, ele perde tudo.')
 print('  ')
 print("Você tem: 100 fichas")
+print('  ')
 
 
 pergunta = input("Você quer começar o jogo? (sim/não)")
